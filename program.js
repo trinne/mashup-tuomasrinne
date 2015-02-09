@@ -21,9 +21,11 @@ http.get(requestUrl, function(res) {
 
     var books = JSON.parse(body).records;
     var content = books.map(function(book){
-      return '<h2>'+book.title+'</h2><span>'+
-        book.author+'</span><br><p class="publisher">'+
-        book.publisher+' - ('+book.year+')</p>';
+      if(book.type === 'book') {
+        return '<h2>'+book.title+'</h2><span>'+
+          book.author+'</span><br><p class="publisher">'+
+          book.publisher+' - ('+book.year+')</p>';
+      }
     });
     pageContent = '<head><title>Books</title></head><body><div class="content">'+content+'<div></body>';
   });
