@@ -27,7 +27,7 @@ http.get(requestUrl, function(res) {
           book.publisher+' - ('+book.year+')</p>';
       }
     });
-    pageContent = '<head><title>Books</title></head><body><div class="content">'+content+'<div></body>';
+    pageContent = '<head><title>Awesome Books</title></head><body><div class="content">'+content+'<div></body>';
   });
 
 }).on('error', function(e) {
